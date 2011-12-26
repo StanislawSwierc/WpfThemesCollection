@@ -1,0 +1,13 @@
+*.suo
+*.user
+*.vspscc
+*.vssscc
+*.vs10x
+*.pidb
+*.userprefs
+bin/
+Bin/
+obj/
+Obj/
+TestResults/
+_Resharper.*/
