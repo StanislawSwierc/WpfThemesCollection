@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <version>1.0.0</version>
+    <authors>StanislawSwierc</authors>
+    <owners />
+    <licenseUrl>https://github.com/StanislawSwierc/WpfThemesCollection/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/StanislawSwierc/WpfThemesCollection</projectUrl>
+    <id>Wpf.Themes.ExpressionDark</id>
+    <title>WPF Themes - ExpressionDark</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>ExpressionDark theme for WPF.</description>
+    <summary>ExpressionDark theme for WPF.</summary>
+    <tags>wpf theme themes expression</tags>
+  </metadata>
+  <files>
+    <file src="..\..\Themes\ExpressionDark.xaml" target="content\Themes\ExpressionDark.xaml" />
+    <file src="..\ExpressionDark\content\App.xaml.transform" target="content\App.xaml.transform" />
+  </files>
+</package>
