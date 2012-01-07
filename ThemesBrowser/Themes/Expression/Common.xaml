@@ -11,26 +11,24 @@
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   mc:Ignorable="d"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008">
-
-    <!-- Main Colors -->
-
-    <Color x:Key="MainColor">#FF939393</Color>
-    <Color x:Key="HoverColor">#FFAAAAAA</Color>
+    
+    <Color x:Key="MainColor">#FF595959</Color>
+    <Color x:Key="HoverColor">#FF393939</Color>
     <Color x:Key="DefaultColor">#FF9BB1C5</Color>
-    <SolidColorBrush x:Key="LightBrush" Color="#FFAFAFAF" />
-    <SolidColorBrush x:Key="ShadeBrush" Color="#FF9F9F9F" />
+    <SolidColorBrush x:Key="LightBrush" Color="#FF333333" />
+    <SolidColorBrush x:Key="ShadeBrush" Color="#FF434343" />
 
     <Color x:Key="TopGradientSelectColor">#FFFFFFFF</Color>
-    <Color x:Key="BottomGradientSelectColor">#FF999999</Color>
+    <Color x:Key="BottomGradientSelectColor">#FF737373</Color>
 
     <Color x:Key="BlackColor">#FF000000</Color>
     <Color x:Key="WhiteColor">#FFFFFFFF</Color>
 
-    <SolidColorBrush x:Key="TextBrush" Color="#FF000000" />
+    <SolidColorBrush x:Key="TextBrush" Color="#FFFFFFFF" />
     <SolidColorBrush x:Key="NormalBrush" Color="{StaticResource MainColor}" />
-    <SolidColorBrush x:Key="NormalBorderBrush" Color="#FF9B9999" />
+    <SolidColorBrush x:Key="NormalBorderBrush" Color="#FF333333" />
     <SolidColorBrush x:Key="HoverBrush" Color="{StaticResource HoverColor}" />
-    <SolidColorBrush x:Key="GlyphBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="GlyphBrush" Color="#FFD1D1D1" />
 
     <LinearGradientBrush x:Key="PressedBrush" EndPoint="0.5,0.971" StartPoint="0.5,0.042">
         <GradientStop Color="#4C000000" Offset="0" />
@@ -39,7 +37,7 @@
         <GradientStop Color="#26FFFFFF" Offset="0.479" />
     </LinearGradientBrush>
 
-    <SolidColorBrush x:Key="ControlBackgroundBrush" Color="#FFD6D6D6" />
+    <SolidColorBrush x:Key="ControlBackgroundBrush" Color="#FF333333" />
 
     <LinearGradientBrush x:Key="SelectedBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
         <GradientStop Color="{StaticResource TopGradientSelectColor}" Offset="0" />
@@ -47,10 +45,9 @@
     </LinearGradientBrush>
 
     <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
-    <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="#FFD4D4D4" />
+    <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="#FF787878" />
     <SolidColorBrush x:Key="DisabledBorderBrush" Color="#AAA" />
-    <SolidColorBrush x:Key="WindowBackgroundBrush" Color="#FFFFFFFF" />
-
+    <SolidColorBrush x:Key="WindowBackgroundBrush" Color="#FF595959" />
 
     <!-- EXPRESSION COMMON VALUES -->
 
@@ -132,12 +129,12 @@
             </Storyboard>
             <Storyboard x:Key="FocusedOn">
                 <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)">
-                    <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                 </DoubleAnimationUsingKeyFrames>
             </Storyboard>
             <Storyboard x:Key="FocussedOff">
                 <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)">
-                    <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                 </DoubleAnimationUsingKeyFrames>
             </Storyboard>
 
@@ -157,19 +154,19 @@
             </Trigger>
             <Trigger Property="IsKeyboardFocused" Value="true">
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource FocussedOff}" x:Name="FocussedOff_BeginStoryboard"/>
+                    <BeginStoryboard Storyboard="{StaticResource FocussedOff}" x:Name="FocussedOff_BeginStoryboard" />
                 </Trigger.ExitActions>
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource FocusedOn}" x:Name="FocusedOn_BeginStoryboard"/>
+                    <BeginStoryboard Storyboard="{StaticResource FocusedOn}" x:Name="FocusedOn_BeginStoryboard" />
                 </Trigger.EnterActions>
 
             </Trigger>
             <Trigger Property="IsMouseOver" Value="true">
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard"/>
+                    <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard" />
                 </Trigger.ExitActions>
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource HoverOn}"/>
+                    <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                 </Trigger.EnterActions>
 
             </Trigger>
@@ -178,14 +175,14 @@
                     <BeginStoryboard Storyboard="{StaticResource PressedOff}" />
                 </Trigger.ExitActions>
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource PressedOn}"/>
+                    <BeginStoryboard Storyboard="{StaticResource PressedOn}" />
                 </Trigger.EnterActions>
             </Trigger>
             <Trigger Property="IsEnabled" Value="true" />
             <Trigger Property="IsEnabled" Value="false">
                 <Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Background" />
                 <Setter Property="BorderBrush" Value="{DynamicResource DisabledBorderBrush}" TargetName="ShineBorder" />
-                <Setter Property="Opacity" TargetName="Grid" Value="0.5"/>
+                <Setter Property="Opacity" TargetName="Grid" Value="0.5" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -265,12 +262,12 @@
             </Storyboard>
             <Storyboard x:Key="FocussedOn">
                 <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ContentFocusVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)">
-                    <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                 </DoubleAnimationUsingKeyFrames>
             </Storyboard>
             <Storyboard x:Key="FocussedOff">
                 <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ContentFocusVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)">
-                    <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                 </DoubleAnimationUsingKeyFrames>
             </Storyboard>
         </ControlTemplate.Resources>
@@ -292,10 +289,10 @@
         <ControlTemplate.Triggers>
             <Trigger Property="IsFocused" Value="True">
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource FocussedOff}" x:Name="FocussedOff_BeginStoryboard"/>
+                    <BeginStoryboard Storyboard="{StaticResource FocussedOff}" x:Name="FocussedOff_BeginStoryboard" />
                 </Trigger.ExitActions>
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource FocussedOn}" x:Name="FocussedOn_BeginStoryboard"/>
+                    <BeginStoryboard Storyboard="{StaticResource FocussedOn}" x:Name="FocussedOn_BeginStoryboard" />
                 </Trigger.EnterActions>
             </Trigger>
             <MultiTrigger>
@@ -321,29 +318,29 @@
                 <MultiTrigger.ExitActions>
                     <BeginStoryboard x:Name="ThreeStateOff1_BeginStoryboard" Storyboard="{StaticResource IndeterminateOff}" />
                 </MultiTrigger.ExitActions>
-                <Setter Property="Visibility" TargetName="CheckIcon" Value="Hidden"/>
+                <Setter Property="Visibility" TargetName="CheckIcon" Value="Hidden" />
             </MultiTrigger>
             <Trigger Property="IsChecked" Value="True">
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource CheckedFalse}" x:Name="CheckedTrue_BeginStoryboard"/>
+                    <BeginStoryboard Storyboard="{StaticResource CheckedFalse}" x:Name="CheckedTrue_BeginStoryboard" />
                 </Trigger.ExitActions>
                 <Trigger.EnterActions>
-                    <BeginStoryboard x:Name="CheckedTrue_BeginStoryboard1" Storyboard="{StaticResource CheckedTrue}"/>
+                    <BeginStoryboard x:Name="CheckedTrue_BeginStoryboard1" Storyboard="{StaticResource CheckedTrue}" />
                 </Trigger.EnterActions>
             </Trigger>
             <Trigger Property="IsMouseOver" Value="true">
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource HoverOn}"/>
+                    <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource HoverOff}"/>
+                    <BeginStoryboard Storyboard="{StaticResource HoverOff}" />
                 </Trigger.ExitActions>
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
                 <Setter Property="Fill" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Background" />
                 <Setter Property="Stroke" Value="{DynamicResource DisabledBorderBrush}" TargetName="Background" />
                 <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
-                <Setter Property="Opacity" TargetName="bulletDecorator" Value="0.5"/>
+                <Setter Property="Opacity" TargetName="bulletDecorator" Value="0.5" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -393,12 +390,12 @@
             </Storyboard>
             <Storyboard x:Key="FocussedOn">
                 <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ContentFocusVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)">
-                    <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                 </DoubleAnimationUsingKeyFrames>
             </Storyboard>
             <Storyboard x:Key="FocussedOff">
                 <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ContentFocusVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)">
-                    <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                 </DoubleAnimationUsingKeyFrames>
             </Storyboard>
         </ControlTemplate.Resources>
@@ -419,48 +416,48 @@
         <ControlTemplate.Triggers>
             <Trigger Property="IsFocused" Value="True">
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource FocussedOff}" x:Name="FocussedOff_BeginStoryboard"/>
+                    <BeginStoryboard Storyboard="{StaticResource FocussedOff}" x:Name="FocussedOff_BeginStoryboard" />
                 </Trigger.ExitActions>
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource FocussedOn}" x:Name="FocussedOn_BeginStoryboard"/>
+                    <BeginStoryboard Storyboard="{StaticResource FocussedOn}" x:Name="FocussedOn_BeginStoryboard" />
                 </Trigger.EnterActions>
             </Trigger>
             <Trigger Property="IsChecked" Value="false">
 
                 <Trigger.ExitActions>
-                    <BeginStoryboard x:Name="CheckedOn_BeginStoryboard" Storyboard="{StaticResource CheckedOn}"/>
+                    <BeginStoryboard x:Name="CheckedOn_BeginStoryboard" Storyboard="{StaticResource CheckedOn}" />
                 </Trigger.ExitActions>
                 <Trigger.EnterActions>
-                    <BeginStoryboard x:Name="CheckedOff_BeginStoryboard" Storyboard="{StaticResource CheckedOff}"/>
+                    <BeginStoryboard x:Name="CheckedOff_BeginStoryboard" Storyboard="{StaticResource CheckedOff}" />
                 </Trigger.EnterActions>
 
             </Trigger>
-            <Trigger Property="IsChecked" Value="True"/>
+            <Trigger Property="IsChecked" Value="True" />
             <Trigger Property="IsMouseOver" Value="true">
 
                 <Trigger.ExitActions>
-                    <BeginStoryboard x:Name="HoverOff_BeginStoryboard" Storyboard="{StaticResource HoverOff}"/>
+                    <BeginStoryboard x:Name="HoverOff_BeginStoryboard" Storyboard="{StaticResource HoverOff}" />
                 </Trigger.ExitActions>
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource HoverOn}"/>
+                    <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                 </Trigger.EnterActions>
 
             </Trigger>
             <Trigger Property="IsPressed" Value="true">
 
                 <Trigger.ExitActions>
-                    <BeginStoryboard x:Name="PressedOff_BeginStoryboard" Storyboard="{StaticResource PressedOff}"/>
+                    <BeginStoryboard x:Name="PressedOff_BeginStoryboard" Storyboard="{StaticResource PressedOff}" />
                 </Trigger.ExitActions>
                 <Trigger.EnterActions>
-                    <BeginStoryboard x:Name="PressedOn_BeginStoryboard" Storyboard="{StaticResource PressedOn}"/>
+                    <BeginStoryboard x:Name="PressedOn_BeginStoryboard" Storyboard="{StaticResource PressedOn}" />
                 </Trigger.EnterActions>
 
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Fill" TargetName="Background" Value="{DynamicResource DisabledBackgroundBrush}"/>
-                <Setter Property="Stroke" TargetName="Background" Value="{DynamicResource DisabledBorderBrush}"/>
-                <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
-                <Setter Property="Opacity" TargetName="bulletDecorator" Value="0.5"/>
+                <Setter Property="Fill" TargetName="Background" Value="{DynamicResource DisabledBackgroundBrush}" />
+                <Setter Property="Stroke" TargetName="Background" Value="{DynamicResource DisabledBorderBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
+                <Setter Property="Opacity" TargetName="bulletDecorator" Value="0.5" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -1307,6 +1304,7 @@
         <ControlTemplate.Triggers>
         </ControlTemplate.Triggers>
     </ControlTemplate>
+
     <Style TargetType="{x:Type ComboBox}">
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
         <Setter Property="SnapsToDevicePixels" Value="true" />
@@ -1333,7 +1331,7 @@
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
                 <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
-                <Setter Property="Opacity" TargetName="grid" Value="0.5"/>
+                <Setter Property="Opacity" TargetName="grid" Value="0.5" />
             </Trigger>
             <Trigger Property="IsGrouping" Value="true">
                 <Setter Property="ScrollViewer.CanContentScroll" Value="false" />
@@ -1546,19 +1544,19 @@
         <ControlTemplate.Triggers>
             <Trigger Property="IsFocused" Value="True">
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource FocusedOff}" x:Name="FocusedOff_BeginStoryboard"/>
+                    <BeginStoryboard Storyboard="{StaticResource FocusedOff}" x:Name="FocusedOff_BeginStoryboard" />
                 </Trigger.ExitActions>
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource FocusedOn}" x:Name="FocusedOn_BeginStoryboard"/>
+                    <BeginStoryboard Storyboard="{StaticResource FocusedOn}" x:Name="FocusedOn_BeginStoryboard" />
                 </Trigger.EnterActions>
 
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard"/>
+                    <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard" />
                 </MultiTrigger.ExitActions>
                 <MultiTrigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource HoverOn}"/>
+                    <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                 </MultiTrigger.EnterActions>
                 <MultiTrigger.Conditions>
                     <Condition Property="IsMouseOver" Value="True" />
@@ -1567,8 +1565,8 @@
 
             </MultiTrigger>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Background" TargetName="Border" Value="{DynamicResource DisabledBackgroundBrush}"/>
-                <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource DisabledBorderBrush}"/>
+                <Setter Property="Background" TargetName="Border" Value="{DynamicResource DisabledBackgroundBrush}" />
+                <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource DisabledBorderBrush}" />
                 <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
             </Trigger>
         </ControlTemplate.Triggers>
