@@ -1,48 +1,77 @@
-﻿<Window x:Class="ThemesBrowser.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-    <TabControl >
-        <TabItem Header="Menu" >
-            <Menu VerticalAlignment="Top">
-                <MenuItem Header="File" >
-                    <MenuItem Header="New"/>
-                    <MenuItem Header="Open"/>
-                    <Separator/>
-                    <MenuItem Header="Exit"/>
-                </MenuItem>
-                <MenuItem Header="Edit" >
-                    <MenuItem Header="Undo"/>
-                    <Separator/>
-                    <MenuItem Header="Cut"/>
-                    <MenuItem Header="Copy"/>
-                    <MenuItem Header="Paste"/>
-                </MenuItem>
-            </Menu>
-        </TabItem>
-        <TabItem Header="ContextMenu" >
-            <Border Background="{StaticResource ShadeBrush}">
-                <Border.ContextMenu>
-                    <ContextMenu>
-                        <MenuItem Header="Cut"/>
-                        <MenuItem Header="Copy"/>
-                        <MenuItem Header="Paste"/>
-                    </ContextMenu>
-                </Border.ContextMenu>
-                <TextBlock Text="RightClick to open ContextMenu"/>
-            </Border>
-        </TabItem>
-        <TabItem Header="Buttons" >
-            <StackPanel Width="200" HorizontalAlignment="Left">
-                <Button Content="Normal"/>
-                <Button Content="Disabled" IsEnabled="False"/>
-            </StackPanel>
-        </TabItem>
-        <TabItem Header="RadioButtons" >
-            <StackPanel Width="200" HorizontalAlignment="Left">
-                <RadioButton Content="Normal"/>
-                <RadioButton Content="Disabled" IsEnabled="False"/>
-            </StackPanel>
-        </TabItem>
-    </TabControl>
+        xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.SampleDataSource" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="ThemesBrowser.MainWindow"
+        Title="MainWindow" Height="536" Width="525">
+	<Window.Resources>
+		<SampleData:SampleDataSource x:Key="SampleDataSource" d:IsDataSource="True"/>
+	</Window.Resources>
+	<Grid DataContext="{Binding Source={StaticResource SampleDataSource}}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<GroupBox Grid.Row="0" Grid.Column="0" Header="Menu">
+			<Menu VerticalAlignment="Top">
+				<MenuItem Header="File" >
+					<MenuItem Header="New"/>
+					<MenuItem Header="Open"/>
+					<Separator/>
+					<MenuItem Header="Exit"/>
+				</MenuItem>
+				<MenuItem Header="Edit" >
+					<MenuItem Header="Undo"/>
+					<Separator/>
+					<MenuItem Header="Cut"/>
+					<MenuItem Header="Copy"/>
+					<MenuItem Header="Paste"/>
+				</MenuItem>
+			</Menu>
+		</GroupBox>
+		<GroupBox Grid.Row="0" Grid.Column="1" Header="ContextMenu">
+			<GroupBox.ContextMenu>
+				<ContextMenu>
+					<MenuItem Header="Cut"/>
+					<MenuItem Header="Copy"/>
+					<MenuItem Header="Paste"/>
+				</ContextMenu>
+			</GroupBox.ContextMenu>
+			<TextBlock Text="RightClick to open ContextMenu"/>
+		</GroupBox>
+		<GroupBox Grid.Row="1" Grid.Column="0" Header="TextBlock">
+			<TextBlock Text="TextBlock"/>
+		</GroupBox>
+		<GroupBox Grid.Row="1" Grid.Column="1" Header="TextBox">
+			<TextBox Text="TextBox"/>
+		</GroupBox>
+		<GroupBox Grid.Row="2" Grid.Column="0" Header="Button">
+			<StackPanel Width="200" HorizontalAlignment="Left">
+				<Button Content="Normal"/>
+				<Button Content="Disabled" IsEnabled="False"/>
+			</StackPanel>
+		</GroupBox>
+		<GroupBox Grid.Row="2" Grid.Column="1" Header="RadioButton">
+			<StackPanel Width="200" HorizontalAlignment="Left">
+				<RadioButton Content="Normal"/>
+				<RadioButton Content="Disabled" IsEnabled="False"/>
+			</StackPanel>
+		</GroupBox>                         
+		<GroupBox Grid.Row="3" Grid.Column="0" Header="Calendar">
+			<Calendar/>
+		</GroupBox>
+		<GroupBox Grid.Row="3" Grid.Column="1" Header="DatePicker">
+			<DatePicker/>
+		</GroupBox>
+		<GroupBox Grid.Row="4" Grid.Column="0" Header="DataGrid">
+			<DataGrid ItemsSource="{Binding Collection}" />                       
+		</GroupBox>
+		
+	</Grid>
 </Window>
