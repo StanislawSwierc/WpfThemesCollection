@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <authors>StanislawSwierc</authors>
     <owners />
     <licenseUrl>https://github.com/StanislawSwierc/WpfThemesCollection/blob/master/LICENSE</licenseUrl>
@@ -9,7 +9,7 @@
     <id>Wpf.Themes.ExpressionDark</id>
     <title>WPF Themes - ExpressionDark</title>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>ExpressionDark theme for WPF.</description>
+    <description>ExpressionDark theme for WPF. Supported controls: Calendar, Button, CheckBox, RadioButton, ScrollBar, ListBox, Expander, ComboBox, ProgressBar, TextBox, PasswordBox, RichTextBox, Label, Menu, MenuItem, Separator, TabControl, Slider, TreeView, ToggleButton, GroupBox, ListView, ListViewItem, ToolBar, Calendar</description>
     <summary>ExpressionDark theme for WPF.</summary>
     <tags>wpf theme themes expression</tags>
   </metadata>
