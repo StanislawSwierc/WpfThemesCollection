@@ -72,6 +72,20 @@
 		<GroupBox Grid.Row="4" Grid.Column="0" Header="DataGrid">
 			<DataGrid ItemsSource="{Binding Collection}" />                       
 		</GroupBox>
-		
+        <GroupBox Grid.Row="4" Grid.Column="1" Header="ListBox">
+            <ListBox Margin="0,10,0,0" Width="200" Height="241">
+                <ListBoxItem Content="Afghanistan (AFG)" />
+                <ListBoxItem Content="Åland Islands (ALA)" />
+                <ListBoxItem Content="Albania (ALB)" />
+                <ListBoxItem Content="Algeria (DZA)" />
+                <ListBoxItem Content="American Samoa (ASM)" />
+                <ListBoxItem Content="Andorra (AND)" />
+                <ListBoxItem Content="Angola (AGO)" />
+                <ListBoxItem Content="Anguilla (AIA)" />
+                <ListBoxItem Content="Antarctica (ATA)" />
+                <ListBoxItem Content="Antigua and Barbuda (ATG)" />
+                <ListBoxItem Content="Argentina (ARG)" />
+            </ListBox>
+        </GroupBox>
 	</Grid>
 </Window>
